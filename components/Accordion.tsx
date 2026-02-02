@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import ChevronDown from "./ChevronDown";
 
 export default function Accordion({
   question,
@@ -55,7 +56,7 @@ export default function Accordion({
     <div className="bg-[#0BA7EB] rounded-lg overflow-hidden">
       <button
         onClick={handleClick}
-        className="flex w-full items-center justify-between py-5 px-6 text-left font-semibold text-white transition-colors hover:text-white/80"
+        className="flex w-full items-center justify-between py-5 px-6 text-left font-semibold text-white transition-colors hover:text-[#fff7ca] hover:cursor-pointer"
         aria-expanded={isCurrentlyOpen}
         aria-controls={`answer-${question}`}
       >
@@ -65,7 +66,7 @@ export default function Accordion({
             isCurrentlyOpen ? "rotate-180" : ""
           }`}
         >
-          ▼
+          <ChevronDown className="w-6 h-6" />
         </span>
       </button>
       {isCurrentlyOpen && (
