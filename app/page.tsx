@@ -13,9 +13,9 @@ export default async function Home() {
           </h1>
           {accordionEntries.length > 0 ? (
             <div className="space-y-6">
-              {accordionEntries.map((accordion) => (
+              {accordionEntries.map((accordion, index) => (
                 <FAQ
-                  key={accordion.id}
+                  key={accordion.id + "_" + index}
                   title={accordion.title}
                   content={accordion.accordionItems}
                 />

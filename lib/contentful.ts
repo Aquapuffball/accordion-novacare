@@ -32,7 +32,6 @@ const ACCORDION_QUERY = `
   }
 `;
 
-// GraphQL response types (using aliases for cleaner collection names)
 interface GraphQLAccordionItem {
   sys: { id: string };
   name: string;
@@ -54,7 +53,6 @@ interface GraphQLResponse {
   };
 }
 
-// Fetch accordion entries from Contentful using GraphQL
 export async function getAccordions(): Promise<Accordion[]> {
   try {
     const data = await graphQLClient.request<GraphQLResponse>(ACCORDION_QUERY);

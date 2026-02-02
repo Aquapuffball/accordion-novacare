@@ -38,7 +38,7 @@ export default function Accordion({
       : openIndex === index;
 
   const handleClick = () => {
-    // If multipleOpen is true OR parent control props are not provided, use local state
+    // If multipleOpen is true OR parent control props are not provided, use local state. Else use parent-controlled state.
     if (
       multipleOpen ||
       !onOpen ||
@@ -47,7 +47,6 @@ export default function Accordion({
     ) {
       setIsOpen(!isOpen);
     } else {
-      // Parent controls: only one open at a time
       onOpen(openIndex === index ? null : index);
     }
   };
