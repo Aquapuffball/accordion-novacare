@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Accordion Novacare
+
+A Next.js FAQ accordion application that fetches content from Contentful CMS using GraphQL.
+
+## Features
+
+### Accordion Component
+
+- **Multiple open mode**: By default, multiple accordion items can be open simultaneously
+- **Single open mode**: Toggle to allow only one accordion item open at a time
+- **Smooth animations**: Rotating chevron icon and content transitions
+- **Accessible**: Proper ARIA attributes for screen readers
+- **Styling**: Matches Novacare's brand colors (dark blue background, light blue accordions)
+
+### Data Fetching
+
+- Fetches accordion data from Contentful using GraphQL
+- Optimized queries that only fetch required fields
+- Server-side rendering for better performance and SEO
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Set up environment variables:
+   Create a `.env` file in the root directory:
+
+```
+ACCESS_TOKEN=your_contentful_access_token
+SPACE=your_contentful_space_id
+ENVIRONMENT=master
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm test` - Run tests in watch mode
+- `npm run test:ui` - Run tests with visual UI
+- `npm run test:coverage` - Run tests with coverage report
+- `npm run test:run` - Run tests once (useful for CI/CD)
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+├── app/              # Next.js app directory
+├── components/       # React components
+│   ├── Accordion.tsx    # Individual accordion item
+│   ├── FAQ.tsx          # FAQ container with multiple accordions
+│   └── ChevronDown.tsx  # Chevron icon component
+├── lib/              # Utility functions
+│   └── contentful.ts    # Contentful GraphQL client
+├── types/            # TypeScript type definitions
+└── public/           # Static assets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Contentful** - Headless CMS
+- **GraphQL** - Data fetching
+- **Vitest** - Testing framework
+- **React Testing Library** - Component testing
